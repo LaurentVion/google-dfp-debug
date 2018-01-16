@@ -1,0 +1,45 @@
+[main] WARN com.google.api.ads.dfp.lib.client.DfpServiceClient.requestInfoLogger - Request made: Service: AudienceSegmentService Method: createAudienceSegments networkCode: null URL: https://ads.google.com/apis/ads/publisher/v201708/AudienceSegmentService Request ID: 9ed1e3bad6947c3175535fcc87371ea2 ResponseTime(ms): 521 OperationsCount: null IsFault: true FaultMessage: ApiException{errors=[TypeError{errorString=TypeError.INVALID_TYPE, fieldPath=, trigger=Sports enthusiasts audience segment #1543717989}]}
+[main] INFO com.google.api.ads.dfp.lib.client.DfpServiceClient.soapXmlLogger - SOAP request:
+<?xml version="1.0" encoding="UTF-8"?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <soapenv:Header>
+        <ns1:RequestHeader xmlns:ns1="https://www.google.com/apis/ads/publisher/v201708" soapenv:mustUnderstand="0">
+            <ns1:networkCode>42159803</ns1:networkCode>
+            <ns1:applicationName>dfpconnector-1082 (DfpApi-Java, Dfp-Axis/3.9.0, Common-Java/3.9.0, Axis/1.4, Java/1.8.0_151, maven)</ns1:applicationName>
+        </ns1:RequestHeader>
+    </soapenv:Header>
+    <soapenv:Body>
+        <createAudienceSegments xmlns="https://www.google.com/apis/ads/publisher/v201708">
+            <segments xmlns:ns2="https://www.google.com/apis/ads/publisher/v201708" xsi:type="ns2:NonRuleBasedFirstPartyAudienceSegment">
+                <name>Sports enthusiasts audience segment #1543717989</name>
+                <description>Sports enthusiasts between the ages of 20 and 30.</description>
+                <membershipExpirationDays>88</membershipExpirationDays>
+            </segments>
+        </createAudienceSegments>
+    </soapenv:Body>
+</soapenv:Envelope>
+
+[main] INFO com.google.api.ads.dfp.lib.client.DfpServiceClient.soapXmlLogger - SOAP response:
+<?xml version="1.0" encoding="UTF-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+    <soap:Header>
+        <ResponseHeader xmlns="https://www.google.com/apis/ads/publisher/v201708">
+            <requestId>9ed1e3bad6947c3175535fcc87371ea2</requestId>
+            <responseTime>521</responseTime>
+        </ResponseHeader>
+    </soap:Header>
+    <soap:Body>
+        <soap:Fault>
+            <faultcode>soap:Server</faultcode>
+            <faultstring>[TypeError.INVALID_TYPE @ ; trigger:'Sports enthusiasts audience segment #1543717989']</faultstring>
+            <detail>
+                <ApiExceptionFault xmlns="https://www.google.com/apis/ads/publisher/v201708">
+                    <message>[TypeError.INVALID_TYPE @ ; trigger:'Sports enthusiasts audience segment #1543717989']</message>
+                    <errors xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="TypeError">
+                        <fieldPath/>
+                        <trigger>Sports enthusiasts audience segment #1543717989</trigger>
+                        <errorString>TypeError.INVALID_TYPE</errorString>
+                    </errors>
+                </ApiExceptionFault>
+            </detail>
+        </soap:Fault>
+    </soap:Body>
+</soap:Envelope>
